@@ -1,10 +1,10 @@
 class Solution:
     def twoSum(self, nums, target):
         n = len(nums)
+        p = {}
         for i in range(n):
-            for j in range(i+1,n):
-                if target - nums[i] == nums[j]:
-                    return i,j
-                else:
-                    continue
+            if nums[i] in p:
+                return p[nums[i]],i
+            else:
+                p[target - nums[i]] = i
 
